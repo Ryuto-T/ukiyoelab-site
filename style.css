@@ -1,0 +1,228 @@
+/* ===== 色と書体 ===== */
+:root {
+  --washi: #F0E8D5;   /* 地 */
+  --ai: #1B3A6B;      /* 濃い面・見出し */
+  --shu: #C8401A;     /* 落款と下線のみ */
+  --sumi: #2A2520;    /* 本文 */
+  --usuzumi: #6B6253; /* 補足 */
+  --rule: rgba(27, 58, 107, 0.18);
+  --gutter: clamp(1.75rem, 7vw, 8rem);
+  --mincho: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--washi);
+  color: var(--sumi);
+  font-family: var(--gothic);
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 { font-family: var(--mincho); font-weight: 400; line-height: 1.5; margin: 0; color: var(--ai); }
+p { margin: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; }
+
+:focus-visible { outline: 2px solid var(--ai); outline-offset: 4px; }
+.hero :focus-visible, .works :focus-visible { outline-color: var(--washi); }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+/* リンク：塗りボタンにせず、朱の細い下線 */
+.link {
+  text-decoration: underline;
+  text-decoration-color: var(--shu);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.5em;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.link:hover { text-decoration-thickness: 2px; }
+
+/* 落款：朱の小さな正方形。屋号と © の脇だけ */
+.rakkan {
+  display: inline-block;
+  width: 0.6em; height: 0.6em;
+  background: var(--shu);
+  flex: none;
+}
+
+/* ===== ヒーロー：和紙の地に作品を額装して置く ===== */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: clamp(2rem, 6vh, 4rem);
+  padding: clamp(1.75rem, 5vh, 3rem) var(--gutter) clamp(2.5rem, 7vh, 4.5rem);
+  background: var(--washi);
+}
+.hero__name {
+  display: flex; align-items: center; gap: 0.7em;
+  color: var(--ai);
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+}
+.hero__stage {
+  display: grid;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-content: center;
+  justify-items: start;
+}
+.hero__figure { margin: 0; justify-self: center; }
+.hero__figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 66svh;
+  width: auto; height: auto;
+}
+.hero__figure figcaption {
+  margin-top: 1.25rem;
+  color: var(--usuzumi);
+  font-size: 0.72rem;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+}
+.hero__figure figcaption span { display: block; }
+
+/* スマホ：作品を画面幅いっぱいに。高さはなりゆきに任せる */
+@media (max-width: 767px) {
+  .hero {
+    min-height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: clamp(3rem, 9vh, 5rem);
+  }
+  .hero__name { padding-left: 0.75rem; }
+  .hero__figure img { max-height: none; width: 100%; }
+  .hero__figure figcaption { padding: 0 0.75rem; }
+  .hero__catch { padding: 0 0.75rem; }
+}
+.hero__catch {
+  font-family: var(--mincho);
+  font-size: clamp(1.3rem, 4.6vw, 1.9rem);
+  letter-spacing: 0.3em;
+  line-height: 1.8;
+  color: var(--ai);
+}
+/* スマホは横書きのまま。span は行内に並ぶ */
+.hero__catch span { display: inline; }
+
+/* ===== 前書き ===== */
+.lead {
+  margin: 0 var(--gutter);
+  padding: clamp(6rem, 15vw, 12rem) 0;
+  font-family: var(--mincho);
+  font-size: clamp(1.25rem, 3.2vw, 2.1rem);
+  line-height: 2.3;
+  letter-spacing: 0.14em;
+  color: var(--ai);
+}
+
+/* ===== 届けているもの：藍の面 ===== */
+.works {
+  padding: clamp(5rem, 12vw, 9rem) var(--gutter);
+  background: var(--ai);
+  color: var(--washi);
+}
+.works h3 { color: var(--washi); }
+.works li {
+  display: grid;
+  gap: 1.5rem 2rem;
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  border-top: 1px solid rgba(240, 232, 213, 0.22);
+}
+.works li:last-child { border-bottom: 1px solid rgba(240, 232, 213, 0.22); }
+.works__name h3 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  letter-spacing: 0.08em;
+}
+.works__name p {
+  margin-top: 0.7em;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: rgba(240, 232, 213, 0.78);
+}
+
+/* ===== 運営者情報 ===== */
+.info {
+  margin: 0 var(--gutter);
+  padding: clamp(5rem, 12vw, 9rem) 0 clamp(3.5rem, 8vw, 6rem);
+  font-size: 0.85rem;
+}
+.info__title {
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+}
+.info dl { margin: 0 0 2.5rem; max-width: 42em; }
+.info dt { color: var(--usuzumi); }
+.info dd { margin: 0 0 1rem; }
+.info__note {
+  max-width: 42em;
+  color: var(--usuzumi);
+  font-size: 0.78rem;
+  line-height: 1.9;
+}
+
+/* ===== フッター ===== */
+.footer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 1rem;
+  margin: 0 var(--gutter);
+  padding: 2.25rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+.footer__sns { display: flex; gap: 2rem; }
+.footer__sns a { text-decoration: none; }
+.footer__sns a:hover { text-decoration: underline; text-decoration-color: var(--shu); text-underline-offset: 0.5em; }
+.footer__copy { display: flex; align-items: center; gap: 0.7em; color: var(--usuzumi); }
+
+/* ===== 768px 以上 ===== */
+@media (min-width: 768px) {
+  body { font-size: 17px; }
+
+  .hero__stage {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    justify-items: stretch;
+  }
+  .hero__catch {
+    justify-self: end;
+    align-self: center;
+    width: 1em;
+    font-size: clamp(1.4rem, 2.1vw, 1.9rem);
+    letter-spacing: 0;
+    line-height: 1.45;
+  }
+  .hero__catch span { display: block; text-align: center; }
+  /* 読点の代わりの空き。一字分は取らず、半分で間を置く */
+  .hero__catch span.sp {
+    height: 0.55em;
+    line-height: 0.55;
+  }
+
+  .works li {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+  }
+  .works li .link { justify-self: end; }
+
+  .info dl { display: grid; grid-template-columns: 9em 1fr; }
+  .info dd { margin-bottom: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

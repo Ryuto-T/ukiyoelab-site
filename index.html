@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>浮世絵ラボ</title>
+  <meta name="description" content="浮世絵ラボは、江戸時代の文化と歴史をテーマにしたコンテンツブランドです。習慣化アプリ Edo-habit、浮世絵のアートポスター、連載「江戸暮らし大全」。">
+  <link rel="canonical" href="https://ukiyoelab.com/">
+  <meta name="theme-color" content="#1B3A6B">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="浮世絵ラボ">
+  <meta property="og:title" content="浮世絵ラボ">
+  <meta property="og:description" content="浮世絵を、いまの暮らしのなかへ。">
+  <meta property="og:url" content="https://ukiyoelab.com/">
+  <meta property="og:image" content="https://ukiyoelab.com/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "浮世絵ラボ",
+    "alternateName": "Ukiyoe Lab",
+    "url": "https://ukiyoelab.com/",
+    "logo": "https://ukiyoelab.com/images/apple-touch-icon.png",
+    "email": "ukiyoelab.contact@gmail.com",
+    "description": "江戸時代の文化と歴史をテーマにしたコンテンツブランド。習慣化アプリ Edo-habit、浮世絵のアートポスター、連載「江戸暮らし大全」。",
+    "sameAs": [
+      "https://www.instagram.com/ukiyoe_lab/",
+      "https://www.youtube.com/@ukiyoe_lab",
+      "https://note.com/ukiyoe_lab",
+      "https://ukiyoelab.base.shop/"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ヒーロー：和紙の地に作品を額装して置く。文字は地の上なので確実に読める -->
+<header class="hero">
+  <h1 class="hero__name"><span class="rakkan" aria-hidden="true"></span>浮世絵ラボ</h1>
+
+  <div class="hero__stage">
+    <figure class="hero__figure">
+      <!-- 【差し替え】images/hero.webp -->
+      <img src="images/hero.webp" width="2400" height="1692" alt="葛飾北斎「冨嶽三十六景 神奈川沖浪裏」">
+      <!-- 出典：LOC 目録 2008660568／Digital ID: jpd 02018
+           Created/Published: [between 1826 and 1833, printed later]
+           Notes: "Adachi modern reprint (Showa)." / Rights Advisory: No known restrictions on publication. -->
+      <figcaption><span>葛飾北斎《冨嶽三十六景　神奈川沖浪裏》</span><span>文政九〜天保四年頃　昭和期復刻</span><span>Library of Congress, Prints and Photographs Division</span></figcaption>
+    </figure>
+    <!-- 縦書きは writing-mode を使わず、1文字ずつ積む（書体や環境による字の重なりを避けるため） -->
+    <p class="hero__catch" aria-label="江戸を　いまの暮らしに"><span aria-hidden="true">江</span><span aria-hidden="true">戸</span><span aria-hidden="true">を</span><span class="sp" aria-hidden="true">　</span><span aria-hidden="true">い</span><span aria-hidden="true">ま</span><span aria-hidden="true">の</span><span aria-hidden="true">暮</span><span aria-hidden="true">ら</span><span aria-hidden="true">し</span><span aria-hidden="true">に</span></p>
+  </div>
+</header>
+
+<main>
+
+  <!-- 前書き：常識を裏切り、理由を述べ、断定しない -->
+  <section class="lead" aria-label="浮世絵ラボについて">
+    <p>浮世絵は、美術館のガラスの向こうにあるものではない。</p>
+    <p>二百年前、町の人が買って、部屋に貼っていた絵である。</p>
+  </section>
+
+  <!-- 届けているもの：藍の面。画像を使わず、名と一行で並べる -->
+  <section class="works" aria-labelledby="works-title">
+    <h2 id="works-title" class="sr-only">届けているもの</h2>
+    <ul>
+      <li>
+        <div class="works__name">
+          <h3>Edo-habit</h3>
+          <p>習慣がつづく、東海道の旅</p>
+        </div>
+        <a class="link" href="https://apps.apple.com/jp/app/id6798573942" target="_blank" rel="noopener">App Store</a>
+      </li>
+      <li>
+        <div class="works__name">
+          <h3>アートポスター</h3>
+          <p>江戸の色彩を、いまの部屋に</p>
+        </div>
+        <a class="link" href="https://ukiyoelab.base.shop/" target="_blank" rel="noopener">BASE</a>
+      </li>
+      <li>
+        <div class="works__name">
+          <h3>江戸暮らし大全</h3>
+          <p>史料を照らし合わせて書く読み物</p>
+        </div>
+        <a class="link" href="https://note.com/ukiyoe_lab" target="_blank" rel="noopener">note</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 運営者情報（本名・住所・電話番号は記載しない） -->
+  <section class="info" aria-labelledby="info-title">
+    <h2 id="info-title" class="info__title">運営者情報</h2>
+    <dl>
+      <dt>屋号</dt>
+      <dd>浮世絵ラボ（Ukiyoe Lab）</dd>
+      <dt>事業内容</dt>
+      <dd>デジタルコンテンツの制作・販売、モバイルアプリの開発・配信</dd>
+      <dt>お問い合わせ</dt>
+      <!-- メールアドレスは script.js で組み立てて表示（スパム対策） -->
+      <dd><span class="js-mail" data-u="ukiyoelab.contact" data-d="gmail" data-t="com">JavaScript を有効にするとメールアドレスが表示されます</span></dd>
+    </dl>
+    <p class="info__note">当サイトでは直接の商品販売は行っておりません。各商品の販売・お取引は、BASE・note・App Store の各プラットフォームにて行われます。</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <ul class="footer__sns">
+    <li><a href="https://www.instagram.com/ukiyoe_lab/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.youtube.com/@ukiyoe_lab" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+  <p class="footer__copy"><span class="rakkan" aria-hidden="true"></span>© 2026 浮世絵ラボ</p>
+</footer>
+
+</body>
+</html>
