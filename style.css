@@ -207,10 +207,12 @@ a { color: inherit; }
     line-height: 1.45;
   }
   .hero__catch span { display: block; text-align: center; }
-  /* 読点の代わりの空き。一字分は取らず、半分で間を置く */
-  .hero__catch span.sp {
-    height: 0.55em;
-    line-height: 0.55;
+  /* 縦組みの読点。横組みの字形は em ボックスの左下に入るので、
+     半分ずつ送って右上に置く。高さは半字分に詰める */
+  .hero__catch span.kuten {
+    height: 0.5em;
+    line-height: 1;
+    transform: translate(0.5em, -0.5em);
   }
 
   .works li {
