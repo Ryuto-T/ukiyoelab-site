@@ -100,7 +100,7 @@ a { color: inherit; }
     min-height: auto;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: clamp(3rem, 9vh, 5rem);
+    padding-bottom: clamp(1.5rem, 4vh, 2.5rem);
   }
   .hero__name { padding-left: 0.75rem; }
   .hero__figure img { max-height: none; width: 100%; }
@@ -120,7 +120,7 @@ a { color: inherit; }
 /* ===== 前書き ===== */
 .lead {
   margin: 0 var(--gutter);
-  padding: clamp(6rem, 15vw, 12rem) 0;
+  padding: clamp(3.5rem, 11vw, 11rem) 0;
   font-family: var(--mincho);
   font-size: clamp(1.25rem, 3.2vw, 2.1rem);
   line-height: 2.3;
