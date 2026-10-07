@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>浮世絵ラボ</title>
-  <meta name="description" content="浮世絵ラボは、江戸時代の文化と歴史をテーマにしたコンテンツブランドです。習慣化アプリ「江戸ジャーナル」、浮世絵のアートポスター、連載「江戸暮らし大全」。">
+  <meta name="description" content="浮世絵ラボは、江戸時代の文化と歴史をテーマにしたコンテンツブランドです。美術館蔵の浮世絵の複製と、江戸の様式で現代を描いたオリジナルのアートポスター、習慣化アプリ「江戸ジャーナル」、連載「江戸暮らし大全」。">
   <link rel="canonical" href="https://ukiyoelab.com/">
   <meta name="theme-color" content="#1B3A6B">
 
@@ -26,7 +26,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="images/hero-sp.webp" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="images/hero-pc.webp" media="(min-width: 768px)">
 
   <script type="application/ld+json">
   {
@@ -37,7 +40,7 @@
     "url": "https://ukiyoelab.com/",
     "logo": "https://ukiyoelab.com/images/apple-touch-icon.png",
     "email": "ukiyoelab.contact@gmail.com",
-    "description": "江戸時代の文化と歴史をテーマにしたコンテンツブランド。習慣化アプリ「江戸ジャーナル」、浮世絵のアートポスター、連載「江戸暮らし大全」。",
+    "description": "江戸時代の文化と歴史をテーマにしたコンテンツブランド。浮世絵のアートポスター、習慣化アプリ「江戸ジャーナル」、連載「江戸暮らし大全」。",
     "sameAs": [
       "https://www.instagram.com/ukiyoe_lab/",
       "https://www.youtube.com/@ukiyoe_lab",
@@ -52,37 +55,73 @@
 </head>
 <body>
 
-<!-- ヒーロー：和紙の地に作品を額装して置く。文字は地の上なので確実に読める -->
+<!-- ヒーロー：作品を画面いっぱいに敷き、文字を重ねる -->
 <header class="hero">
-  <h1 class="hero__name"><span class="rakkan" aria-hidden="true"></span>浮世絵ラボ</h1>
+  <picture class="hero__bg">
+    <source media="(min-width: 768px)" srcset="images/hero-pc.webp" width="2400" height="1350">
+    <img src="images/hero-sp.webp" width="1200" height="1800" alt="歌川広重「名所江戸百景 大はしあたけの夕立」の部分">
+  </picture>
 
-  <div class="hero__stage">
-    <figure class="hero__figure">
-      <!-- 【差し替え】images/hero.webp -->
-      <img src="images/hero.webp" width="2400" height="1692" alt="葛飾北斎「冨嶽三十六景 神奈川沖浪裏」">
-      <!-- 出典：LOC 目録 2008660568／Digital ID: jpd 02018
-           Created/Published: [between 1826 and 1833, printed later]
-           Notes: "Adachi modern reprint (Showa)." / Rights Advisory: No known restrictions on publication. -->
-      <figcaption><span>葛飾北斎《冨嶽三十六景　神奈川沖浪裏》</span><span>文政九〜天保四年頃　昭和期復刻</span><span>Library of Congress, Prints and Photographs Division</span></figcaption>
-    </figure>
-    <!-- 縦書きは writing-mode を使わず、1文字ずつ積む（書体や環境による字の重なりを避けるため） -->
-    <p class="hero__catch" aria-label="江戸を、いまの暮らしに"><span aria-hidden="true">江</span><span aria-hidden="true">戸</span><span aria-hidden="true">を</span><span class="kuten" aria-hidden="true">、</span><span aria-hidden="true">い</span><span aria-hidden="true">ま</span><span aria-hidden="true">の</span><span aria-hidden="true">暮</span><span aria-hidden="true">ら</span><span aria-hidden="true">し</span><span aria-hidden="true">に</span></p>
+  <div class="hero__bar">
+    <p class="hero__name"><span class="rakkan" aria-hidden="true"></span>浮世絵ラボ</p>
+    <a class="hero__shop" href="https://ukiyoelab.base.shop/" target="_blank" rel="noopener">ショップ</a>
   </div>
+
+  <!-- 縦書きは writing-mode を使わず、1文字ずつ積む（書体や環境による字の重なりを避けるため） -->
+  <h1 class="hero__catch" aria-label="江戸を、いまの暮らしに"><span aria-hidden="true">江</span><span aria-hidden="true">戸</span><span aria-hidden="true">を</span><span class="kuten" aria-hidden="true">、</span><span aria-hidden="true">い</span><span aria-hidden="true">ま</span><span aria-hidden="true">の</span><span aria-hidden="true">暮</span><span aria-hidden="true">ら</span><span aria-hidden="true">し</span><span aria-hidden="true">に</span></h1>
+
+  <!-- 出典：シカゴ美術館 1981.1206（CC0） -->
+  <p class="hero__credit">歌川広重《名所江戸百景　大はしあたけの夕立》安政四年（1857）　シカゴ美術館蔵</p>
 </header>
 
 <main>
 
-  <!-- 前書き：常識を裏切り、理由を述べ、断定しない -->
+  <!-- 前書き -->
   <section class="lead" aria-label="浮世絵ラボについて">
-    <p>浮世絵は、美術館のガラスの向こうにあるものではない。</p>
-    <p>二百年前、町の人が買って、部屋に貼っていた絵である。</p>
+    <p><span>浮世絵は、</span><span>美術館のガラスの</span><span>向こうにあるものではない。</span></p>
+    <p><span>二百年前、</span><span>町の人が買って、</span><span>部屋に貼っていた絵である。</span></p>
   </section>
 
-  <!-- 届けているもの：藍の面。画像を使わず、名と一行で並べる -->
+  <!-- アートポスター：二つのシリーズ。作品の額装図と、一字の題 -->
+  <section class="series" aria-labelledby="series-title">
+    <h2 id="series-title" class="series__title">アートポスター</h2>
+
+    <article class="series__item">
+      <figure class="series__figure">
+        <img src="images/series-museum.webp" width="685" height="917" loading="lazy" alt="東洲斎写楽「三代目大谷鬼次の江戸兵衛」を額装した複製ポスターの見本">
+      </figure>
+      <p class="series__mark" aria-hidden="true">蔵</p>
+      <div class="series__body">
+        <h3>美術館蔵の浮世絵</h3>
+        <p class="series__kind">複製</p>
+        <p>シカゴ美術館やメトロポリタン美術館などがパブリックドメインとして公開している所蔵品の画像から、状態のよい一枚を選んで複製しています。どの館の、どの一枚なのかを明記してお届けします。</p>
+        <a class="link" href="https://ukiyoelab.base.shop/categories/7679673" target="_blank" rel="noopener">作品を見る</a>
+      </div>
+    </article>
+
+    <article class="series__item series__item--rev">
+      <figure class="series__figure">
+        <img src="images/series-imayo.webp" width="685" height="917" loading="lazy" alt="今様浮世絵「スマートフォンを見る猫」を額装したポスターの見本">
+      </figure>
+      <p class="series__mark" aria-hidden="true">今</p>
+      <div class="series__body">
+        <h3>今様浮世絵</h3>
+        <p class="series__kind">オリジナル</p>
+        <p>もし江戸の絵師が、いまの東京を見たら。スマートフォンに見入る猫、改札で立ち尽くす猫、雨の街をゆく蛙。江戸の様式で、いまの一場面を描いています。</p>
+        <p class="series__note">制作には AI を用いています。</p>
+        <a class="link" href="https://ukiyoelab.base.shop/categories/7481764" target="_blank" rel="noopener">作品を見る</a>
+      </div>
+    </article>
+
+    <p class="series__foot">どちらも一枚ずつ受注生産でお届けします。販売は BASE で行っています。</p>
+  </section>
+
+  <!-- そのほかの届けもの：藍の面 -->
   <section class="works" aria-labelledby="works-title">
-    <h2 id="works-title" class="sr-only">届けているもの</h2>
+    <h2 id="works-title" class="sr-only">そのほかの届けもの</h2>
     <ul>
       <li>
+        <span class="works__mark" aria-hidden="true">旅</span>
         <div class="works__name">
           <h3>江戸ジャーナル</h3>
           <p>習慣がつづく、東海道の旅</p>
@@ -90,13 +129,7 @@
         <a class="link" href="https://apps.apple.com/jp/app/id6798573942" target="_blank" rel="noopener">App Store</a>
       </li>
       <li>
-        <div class="works__name">
-          <h3>アートポスター</h3>
-          <p>江戸の色彩を、いまの部屋に</p>
-        </div>
-        <a class="link" href="https://ukiyoelab.base.shop/" target="_blank" rel="noopener">BASE</a>
-      </li>
-      <li>
+        <span class="works__mark" aria-hidden="true">読</span>
         <div class="works__name">
           <h3>江戸暮らし大全</h3>
           <p>史料を照らし合わせて書く読み物</p>
