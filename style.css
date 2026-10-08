@@ -229,10 +229,11 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .shops__item p:not(.shops__where) { max-width: 30em; }
 .shops__en {
-  margin-top: 0.8em;
+  margin-top: 1em;
   color: var(--usuzumi);
   font-size: 0.85rem;
-  letter-spacing: 0.02em;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
 }
 .shops__item .link { display: inline-block; margin-top: 1.4em; }
 
