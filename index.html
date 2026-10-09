@@ -61,10 +61,31 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css?v=20261009i">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261009j">
+  <script src="script.js?v=20261009j" defer></script>
 </head>
 <body>
+
+<!-- 上部のタブ：作品紹介／ショップ（BASE・Etsy）／アプリ／読みもの -->
+<div class="gnav gnav--over">
+  <a class="gnav__name" href="/"><span class="rakkan" aria-hidden="true"></span>浮世絵ラボ</a>
+  <nav aria-label="サイトの案内">
+    <ul class="gnav__tabs">
+      <li><a class="gnav__tab" href="/works/">作品紹介</a></li>
+      <li class="gnav__shop">
+        <details>
+          <summary class="gnav__tab">ショップ<span class="gnav__caret" aria-hidden="true"></span></summary>
+          <ul class="gnav__menu">
+            <li><a href="https://ukiyoelab.base.shop/" target="_blank" rel="noopener"><span class="gnav__m-name">BASE</span><span class="gnav__m-for">国内のお客さま｜日本語・送料無料</span><span class="gnav__m-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://ukiyoelabjapan.etsy.com/" target="_blank" rel="noopener"><span class="gnav__m-name">Etsy</span><span class="gnav__m-for">海外のお客さま｜英語・米ドル・額装あり</span><span class="gnav__m-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a class="gnav__tab" href="/#apps">アプリ</a></li>
+      <li><a class="gnav__tab" href="https://note.com/ukiyoe_lab" target="_blank" rel="noopener">読みもの<span class="gnav__ext" aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+</div>
 
 <!-- ヒーロー：作品を画面いっぱいに敷き、文字を重ねる -->
 <header class="hero">
@@ -72,11 +93,6 @@
     <source media="(min-width: 768px)" srcset="images/hero-pc.webp" width="2400" height="1350">
     <img src="images/hero-sp.webp" width="1200" height="1800" alt="歌川広重「名所江戸百景 大はしあたけの夕立」の部分">
   </picture>
-
-  <div class="hero__bar">
-    <p class="hero__name"><span class="rakkan" aria-hidden="true"></span>浮世絵ラボ</p>
-    <a class="hero__shop" href="#shops">ショップ</a>
-  </div>
 
   <!-- 縦書きは writing-mode を使わず、1文字ずつ積む（書体や環境による字の重なりを避けるため） -->
   <h1 class="hero__catch" aria-label="江戸を、いまの暮らしに"><span aria-hidden="true">江</span><span aria-hidden="true">戸</span><span aria-hidden="true">を</span><span class="kuten" aria-hidden="true">、</span><span aria-hidden="true">い</span><span aria-hidden="true">ま</span><span aria-hidden="true">の</span><span aria-hidden="true">暮</span><span aria-hidden="true">ら</span><span aria-hidden="true">し</span><span aria-hidden="true">に</span></h1>
@@ -116,6 +132,7 @@
             <li><a class="link" href="/works/kameido-umeyashiki/"><ruby>亀戸<rt>かめいど</rt></ruby><ruby>梅屋舗<rt>うめやしき</rt></ruby></a></li>
             <li><a class="link" href="/works/otani-oniji-edobei/">三代目<ruby>大谷鬼次<rt>おおたにおにじ</rt></ruby>の<ruby>江戸兵衛<rt>えどべえ</rt></ruby></a></li>
           </ul>
+          <p class="series__all"><a class="link" href="/works/">作品紹介をすべて見る</a></p>
         </nav>
       </div>
     </article>
@@ -161,8 +178,9 @@
   <section class="works" aria-labelledby="works-title">
     <h2 id="works-title" class="sr-only">そのほかの届けもの</h2>
 
-    <article class="journal" aria-labelledby="journal-title">
+    <article id="apps" class="journal" aria-labelledby="journal-title">
       <div class="journal__text">
+        <p class="works__label">アプリ</p>
         <h3 id="journal-title"><a class="name-link" href="https://apps.apple.com/jp/app/id6798573942" target="_blank" rel="noopener">江戸ジャーナル</a></h3>
         <p class="works__sub">習慣と日記で、東海道五十三次を歩く</p>
         <p class="works__body">習慣を果たした日は、旅が一宿すすみます。休んだ日も、来た道が消えることはありません。</p>
@@ -257,6 +275,7 @@
 
     <article class="taizen" aria-labelledby="taizen-title">
       <div class="taizen__text">
+        <p class="works__label">読みもの</p>
         <h3 id="taizen-title"><a class="name-link" href="https://note.com/ukiyoe_lab" target="_blank" rel="noopener">江戸暮らし大全</a></h3>
         <p class="works__sub">史料をたどって書く、江戸の暮らしの読み物</p>
         <p class="works__body">火消しはなぜ水をかけなかったのか。浮世絵はなぜ蕎麦一杯の値で買えたのか。江戸に生きた人々の仕事と暮らしを、一章ずつ書き記しています。</p>

@@ -53,27 +53,46 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "浮世絵ラボ", "item": "https://ukiyoelab.com/" },
-          { "@type": "ListItem", "position": 2, "name": "三代目大谷鬼次の江戸兵衛", "item": "https://ukiyoelab.com/works/otani-oniji-edobei/" }
+          { "@type": "ListItem", "position": 2, "name": "作品紹介", "item": "https://ukiyoelab.com/works/" },
+          { "@type": "ListItem", "position": 3, "name": "三代目大谷鬼次の江戸兵衛", "item": "https://ukiyoelab.com/works/otani-oniji-edobei/" }
         ]
       }
     ]
   }
   </script>
 
-  <link rel="stylesheet" href="/style.css?v=20261009i">
+  <link rel="stylesheet" href="/style.css?v=20261009j">
+  <script src="/script.js?v=20261009j" defer></script>
 </head>
 <body class="page">
 
-<header class="bar">
-  <a class="bar__name" href="/"><span class="rakkan" aria-hidden="true"></span>浮世絵ラボ</a>
-  <a class="bar__shop" href="/#shops">ショップ</a>
-</header>
+<!-- 上部のタブ：作品紹介／ショップ（BASE・Etsy）／アプリ／読みもの -->
+<div class="gnav">
+  <a class="gnav__name" href="/"><span class="rakkan" aria-hidden="true"></span>浮世絵ラボ</a>
+  <nav aria-label="サイトの案内">
+    <ul class="gnav__tabs">
+      <li><a class="gnav__tab" href="/works/">作品紹介</a></li>
+      <li class="gnav__shop">
+        <details>
+          <summary class="gnav__tab">ショップ<span class="gnav__caret" aria-hidden="true"></span></summary>
+          <ul class="gnav__menu">
+            <li><a href="https://ukiyoelab.base.shop/" target="_blank" rel="noopener"><span class="gnav__m-name">BASE</span><span class="gnav__m-for">国内のお客さま｜日本語・送料無料</span><span class="gnav__m-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://ukiyoelabjapan.etsy.com/" target="_blank" rel="noopener"><span class="gnav__m-name">Etsy</span><span class="gnav__m-for">海外のお客さま｜英語・米ドル・額装あり</span><span class="gnav__m-arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a class="gnav__tab" href="/#apps">アプリ</a></li>
+      <li><a class="gnav__tab" href="https://note.com/ukiyoe_lab" target="_blank" rel="noopener">読みもの<span class="gnav__ext" aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+</div>
 
 <main class="article">
 
   <nav class="crumbs" aria-label="現在地">
     <ol>
       <li><a href="/">浮世絵ラボ</a></li>
+      <li><a href="/works/">作品紹介</a></li>
       <li aria-current="page">三代目大谷鬼次の江戸兵衛</li>
     </ol>
   </nav>
