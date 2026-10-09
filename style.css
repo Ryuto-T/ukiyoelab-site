@@ -32,7 +32,7 @@ a { color: inherit; }
 img { display: block; max-width: 100%; height: auto; }
 
 :focus-visible { outline: 2px solid var(--ai); outline-offset: 4px; }
-.hero :focus-visible, .works :focus-visible { outline-color: var(--washi); }
+.hero :focus-visible { outline-color: var(--washi); }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px;
@@ -239,38 +239,230 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ===== そのほかの届けもの：藍の面 ===== */
 .works {
-  padding: clamp(4rem, 10vw, 8rem) var(--gutter);
+  padding: clamp(4.5rem, 11vw, 9rem) var(--gutter);
   background: var(--ai);
   color: var(--washi);
 }
-.works h3 { color: var(--washi); }
-.works li {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 1rem 1.5rem;
-  align-items: center;
-  padding: clamp(2.25rem, 5vw, 3.5rem) 0;
-  border-top: 1px solid rgba(240, 232, 213, 0.22);
-}
-.works li:last-child { border-bottom: 1px solid rgba(240, 232, 213, 0.22); }
-.works__mark {
-  font-family: var(--mincho);
-  font-weight: 700;
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  line-height: 1;
-  color: rgba(240, 232, 213, 0.9);
-}
-.works__name h3 {
-  font-size: clamp(1.5rem, 3.6vw, 2.4rem);
+.works h3 {
+  color: var(--washi);
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
   letter-spacing: 0.08em;
 }
-.works__name p {
+/* 名前そのものを入口に：朱の下線 */
+.works__title {
+  text-decoration: underline;
+  text-decoration-color: var(--shu);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.32em;
+}
+.works__title:hover { text-decoration-thickness: 3px; }
+.works__sub {
   margin-top: 0.5em;
-  font-size: 0.9rem;
+  font-family: var(--mincho);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   letter-spacing: 0.1em;
+  color: rgba(240, 232, 213, 0.86);
+}
+.works__body {
+  max-width: 30em;
+  margin-top: 1.4em;
+  font-size: 0.92rem;
+  line-height: 2.05;
+  color: rgba(240, 232, 213, 0.8);
+}
+.works__meta {
+  margin-top: 1.6em;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: rgba(240, 232, 213, 0.62);
+}
+.works .link { display: inline-block; margin-top: 0.9em; }
+.works :focus-visible { outline-color: var(--washi); }
+
+/* 江戸ジャーナル：日本橋から京まで、五十五の地点を一本の道に */
+.journal { display: grid; gap: 0 3rem; }
+.road { grid-column: 1 / -1; margin: clamp(2.5rem, 6vw, 4rem) 0 0; }
+.road__track { position: relative; padding-top: 34px; }
+/* 点は端の名所の半径（4.5px）だけ内側から、等間隔に置く */
+.road { --pad: 4.5px; }
+.road__stops {
+  position: relative;
+  margin: 0; padding: 0; list-style: none;
+  height: 12px;
+}
+/* 道の線：歩いた所は濃く、先は淡く */
+.road__stops::before,
+.road__stops::after {
+  content: "";
+  position: absolute; left: var(--pad); top: 50%;
+  height: 1px;
+  background: rgba(240, 232, 213, 0.28);
+}
+.road__stops::before { right: var(--pad); }
+.road__stops::after {
+  width: calc(10 / 54 * (100% - 2 * var(--pad)));
+  height: 2px; margin-top: -0.5px;
+  background: var(--washi);
+}
+.road__stop {
+  position: absolute; top: 50%;
+  left: calc(var(--i) / 54 * (100% - 2 * var(--pad)) + var(--pad));
+  transform: translate(-50%, -50%);
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 232, 213, 0.45);
+  background: var(--ai);
+}
+.road__stop.is-passed { border-color: var(--washi); background: var(--washi); }
+.road__stop.is-meisho { width: 9px; height: 9px; }
+.road__stop.is-meisho.is-passed { background: var(--shu); border-color: var(--washi); }
+.road__traveler {
+  position: absolute; top: 0;
+  left: calc(var(--at) / 54 * (100% - 2 * var(--pad)) + var(--pad));
+  transform: translateX(-50%);
+  line-height: 0;
+}
+.road__traveler svg { fill: var(--washi); }
+.road__traveler .staff { stroke: var(--washi); stroke-width: 1.4; fill: none; stroke-linecap: round; }
+.road__labels {
+  position: relative;
+  display: flex; justify-content: space-between;
+  margin-top: 0.9rem;
+  font-family: var(--mincho);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
   color: rgba(240, 232, 213, 0.78);
 }
-.works li .link { grid-column: 2; justify-self: start; }
+.road__here {
+  position: absolute; top: 0;
+  left: calc(var(--at) / 54 * (100% - 2 * var(--pad)) + var(--pad));
+  transform: translateX(-50%);
+  color: var(--washi);
+}
+/* 名所の名：縦に、点の真下に置く（広い画面だけ） */
+.road__names { display: none; }
+@media (min-width: 768px) {
+  .road { --pad: 6px; }
+  .road__track { padding-top: 40px; }
+  .road__stops { height: 14px; }
+  .road__stop { width: 7px; height: 7px; }
+  .road__stop.is-meisho { width: 12px; height: 12px; }
+  .road__traveler svg { width: 28px; height: 35px; }
+  .road__labels { display: none; }
+  .road__names {
+    display: block;
+    position: relative;
+    height: 7.5em;
+    margin: 0.9rem 0 0; padding: 0; list-style: none;
+    font-family: var(--mincho);
+    font-size: 0.82rem;
+    color: rgba(240, 232, 213, 0.7);
+  }
+  .road__names li {
+    position: absolute; top: 0;
+    left: calc(var(--i) / 54 * (100% - 2 * var(--pad)) + var(--pad));
+    transform: translateX(-50%);
+    writing-mode: vertical-rl;
+    letter-spacing: 0.18em;
+    line-height: 1;
+  }
+  .road__names li.is-here { color: var(--washi); }
+}
+@media (max-width: 767px) {
+  /* 狭い画面では、いまいる宿の名を旅人の右に添える */
+  .road__labels .road__here {
+    top: calc(-0.9rem - 12px - 34px + 6px);
+    margin-left: 16px;
+    transform: none;
+  }
+}
+@media (max-width: 599px) {
+  .road { --pad: 3.5px; }
+  .road__stop { width: 4px; height: 4px; }
+  .road__stop.is-meisho { width: 7px; height: 7px; }
+}
+.road figcaption {
+  margin-top: 1.4rem;
+  font-size: 0.8rem;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  color: rgba(240, 232, 213, 0.62);
+}
+
+/* 一度だけの道行き：見えた時に、日本橋から箱根まで歩く */
+.js .road:not(.is-walked) .road__stops::after { width: 0; }
+.js .road:not(.is-walked) .road__stop.is-passed { background: var(--ai); border-color: rgba(240, 232, 213, 0.45); }
+.js .road:not(.is-walked) .road__traveler { left: var(--pad); opacity: 0; }
+.js .road:not(.is-walked) .road__here { opacity: 0; }
+.js .road .road__stops::after { transition: width 1.6s cubic-bezier(0.45, 0, 0.3, 1); }
+.js .road .road__stop.is-passed { transition: background-color 0.3s, border-color 0.3s; transition-delay: calc(var(--i) * 0.145s); }
+.js .road .road__traveler { transition: left 1.6s cubic-bezier(0.45, 0, 0.3, 1), opacity 0.4s; }
+.js .road .road__here { transition: opacity 0.6s 1.5s; }
+
+/* 江戸暮らし大全：藍の面に、生成りの目次を一枚 */
+.taizen {
+  display: grid;
+  gap: 2.5rem 4rem;
+  margin-top: clamp(4.5rem, 10vw, 7rem);
+  padding-top: clamp(3.5rem, 8vw, 5.5rem);
+  border-top: 1px solid rgba(240, 232, 213, 0.22);
+}
+.contents {
+  align-self: start;
+  padding: clamp(1.6rem, 4vw, 2.4rem) clamp(1.4rem, 4vw, 2.6rem);
+  background: var(--washi);
+  color: var(--sumi);
+  /* 子持ち罫：上下に太い線と細い線 */
+  border-top: 3px solid var(--ai);
+  border-bottom: 3px solid var(--ai);
+  box-shadow: inset 0 5px 0 var(--washi), inset 0 6px 0 var(--ai), inset 0 -5px 0 var(--washi), inset 0 -6px 0 var(--ai);
+}
+.contents__head {
+  font-family: var(--mincho);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--ai);
+}
+.contents ol { margin: 1rem 0 0; padding: 0; list-style: none; }
+.contents li + li { border-top: 1px solid rgba(42, 37, 32, 0.14); }
+.contents a {
+  display: grid;
+  grid-template-columns: 6.2em 1fr;
+  gap: 0.15em 0.8em;
+  padding: 1em 0;
+  text-decoration: none;
+}
+.contents__no {
+  grid-row: 1 / 3;
+  padding-top: 0.25em;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--shu);
+}
+.contents__name {
+  font-family: var(--mincho);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--ai);
+}
+.contents__hook {
+  font-family: var(--mincho);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--usuzumi);
+}
+.contents__hook::before { content: "── "; }
+.contents a:hover .contents__name,
+.contents a:focus-visible .contents__name {
+  text-decoration: underline;
+  text-decoration-color: var(--shu);
+  text-underline-offset: 0.35em;
+}
+.contents a:focus-visible { outline-color: var(--ai); outline-offset: 2px; }
+@media (max-width: 767px) {
+  .contents a { grid-template-columns: 1fr; gap: 0.2em; }
+  .contents__no { grid-row: auto; padding-top: 0; }
+}
 
 /* ===== 運営者情報 ===== */
 .info {
@@ -460,8 +652,9 @@ img { display: block; max-width: 100%; height: auto; }
   .buy { grid-template-columns: 1fr 1fr; column-gap: 3rem; }
   .article__hero { margin: 0 auto; max-width: 1100px; }
 
-  .works li { grid-template-columns: auto minmax(0, 1fr) auto; }
-  .works li .link { grid-column: 3; justify-self: end; }
+  .journal { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+  .journal__get { text-align: right; }
+  .taizen { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
 
   .info dl { display: grid; grid-template-columns: 9em 1fr; }
   .info dd { margin-bottom: 1rem; }
