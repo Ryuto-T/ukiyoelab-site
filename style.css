@@ -635,6 +635,8 @@ img { display: block; max-width: 100%; height: auto; }
 .footer__sns a { text-decoration: none; }
 .footer__sns a:hover { text-decoration: underline; text-decoration-color: var(--shu); text-underline-offset: 0.5em; }
 .footer__copy { display: flex; align-items: center; gap: 0.7em; color: var(--usuzumi); }
+.footer__note { order: 3; flex-basis: 100%; margin: 0; color: var(--usuzumi); font-size: 0.72rem; letter-spacing: 0.04em; line-height: 1.8; }
+.footer__note a { color: inherit; text-underline-offset: 0.3em; }
 
 /* ===== 下層ページ（作品を読む・作品紹介・404） ===== */
 .article { margin: 0 var(--gutter); padding: clamp(1.25rem, 3vw, 2rem) 0 clamp(4rem, 10vw, 8rem); }
