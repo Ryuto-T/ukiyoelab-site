@@ -248,14 +248,14 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: clamp(1.7rem, 4vw, 2.6rem);
   letter-spacing: 0.08em;
 }
-/* 名前そのものを入口に：朱の下線 */
-.works__title {
+/* 名前そのものを入口に：朱の下線（江戸ジャーナル・大全・BASE・Etsy） */
+.name-link {
   text-decoration: underline;
   text-decoration-color: var(--shu);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.32em;
 }
-.works__title:hover { text-decoration-thickness: 3px; }
+.name-link:hover { text-decoration-thickness: 3px; }
 .works__sub {
   margin-top: 0.5em;
   font-family: var(--mincho);
@@ -602,7 +602,7 @@ img { display: block; max-width: 100%; height: auto; }
 .facts dd { margin: 0; }
 
 .buy { display: grid; gap: 2.5rem; margin-top: 2.5rem; }
-.buy__item h3 { margin: 0.3em 0 0.5em; font-size: 1.25rem; letter-spacing: 0.06em; }
+.buy__item h3 { margin: 0.3em 0 0.5em; font-size: 1.25rem; letter-spacing: 0.02em; }
 .buy__item .link { display: inline-block; margin-top: 1.2em; }
 
 .en {
