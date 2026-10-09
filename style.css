@@ -738,16 +738,8 @@ img { display: block; max-width: 100%; height: auto; }
 /* 作品の解説への道しるべ（トップと記事の終わり） */
 .readlist ul { display: flex; flex-wrap: wrap; gap: 0.1em 1.5em; margin-top: 0.3em; line-height: 2.4; }
 .readlist rt { font-size: 0.6em; letter-spacing: 0.05em; color: var(--usuzumi); }
-.series__body .readlist .link { display: inline; margin-top: 0; }
 .article__more { margin-top: clamp(3rem, 8vw, 5rem) !important; font-size: 0.95rem; }
 .article__more + .article__back { margin-top: 1.6em !important; }
-
-/* トップの「解説を読む」 */
-.series__read { margin-top: 1.4em; font-size: 0.9rem; }
-
-/* トップの「作品紹介をすべて見る」 */
-.series__all { margin-top: 0.6em; font-size: 0.85rem; }
-.series__body .series__all .link { margin-top: 0; }
 
 /* ===== 作品紹介（/works/） ===== */
 .gallery__head { padding: clamp(2rem, 6vw, 4rem) 0 0; }
