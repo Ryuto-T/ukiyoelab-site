@@ -619,15 +619,15 @@ img { display: block; max-width: 100%; height: auto; }
 .sources a { text-decoration-color: var(--rule); text-underline-offset: 0.3em; }
 .article__body .sources h2 { font-size: 1rem; letter-spacing: 0.15em; }
 .article__back { margin-top: clamp(3rem, 8vw, 5rem) !important; }
-/* 記事の終わり：ほかの作品へ */
+/* 作品の解説への道しるべ（トップと記事の終わり） */
+.readlist ul { display: flex; flex-wrap: wrap; gap: 0.1em 1.5em; margin-top: 0.3em; line-height: 2.4; }
+.readlist rt { font-size: 0.6em; letter-spacing: 0.05em; color: var(--usuzumi); }
+.series__body .readlist .link { display: inline; margin-top: 0; }
 .article__more { margin-top: clamp(3rem, 8vw, 5rem) !important; font-size: 0.95rem; }
-.article__more rt { font-size: 0.6em; letter-spacing: 0.05em; color: var(--usuzumi); }
-.article__more + .article__back { margin-top: 1.2em !important; }
+.article__more + .article__back { margin-top: 1.6em !important; }
 
 /* トップの「解説を読む」 */
-.series__read { display: block; margin-top: 1em; font-size: 0.9rem; }
-.series__read .link { margin-top: 0 !important; }
-.series__read rt { font-size: 0.6em; letter-spacing: 0.05em; color: var(--usuzumi); }
+.series__read { margin-top: 1.4em; font-size: 0.9rem; }
 
 /* 404 */
 .notfound { margin: 0 var(--gutter); padding: clamp(5rem, 16vw, 10rem) 0; }
@@ -655,6 +655,7 @@ img { display: block; max-width: 100%; height: auto; }
   .shops__list { grid-template-columns: 1fr 1fr; column-gap: clamp(2.5rem, 6vw, 6rem); }
   .buy { grid-template-columns: 1fr 1fr; column-gap: 3rem; }
   .article__hero { margin: 0 auto; max-width: 1100px; }
+  .article__hero--tate { max-width: 34rem; }
 
   .journal { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
   .journal__get { text-align: right; }
