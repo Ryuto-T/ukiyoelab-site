@@ -619,6 +619,10 @@ img { display: block; max-width: 100%; height: auto; }
 .sources a { text-decoration-color: var(--rule); text-underline-offset: 0.3em; }
 .article__body .sources h2 { font-size: 1rem; letter-spacing: 0.15em; }
 .article__back { margin-top: clamp(3rem, 8vw, 5rem) !important; }
+/* 記事の終わり：ほかの作品へ */
+.article__more { margin-top: clamp(3rem, 8vw, 5rem) !important; font-size: 0.95rem; }
+.article__more rt { font-size: 0.6em; letter-spacing: 0.05em; color: var(--usuzumi); }
+.article__more + .article__back { margin-top: 1.2em !important; }
 
 /* トップの「解説を読む」 */
 .series__read { display: block; margin-top: 1em; font-size: 0.9rem; }
